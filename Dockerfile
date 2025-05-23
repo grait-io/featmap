@@ -4,7 +4,7 @@ RUN apk add --update npm git
 RUN go install github.com/jteeuwen/go-bindata/...@latest
 COPY ./webapp/package.json webapp/package.json
 RUN cd ./webapp && \
-    npm install
+    npm install --legacy-peer-deps
 COPY . .
 RUN cd ./webapp && \
     npm run build
